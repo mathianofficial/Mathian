@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="Images/Mathian Logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <title>Mathian | Creative Design & Web Development Agency</title>
+  <meta name="description" content="Mathian is a creative agency delivering professional web development, graphic design, branding, and digital solutions that help businesses grow online.">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+.header{
+  background-color: black;
+}
+
+/* SECTION */
+.gallery-section {
+  text-align: center;
+  width: 100%;
+  padding: 150px 12% 50px 12%;
+}
+
+h2 {
+  color: gold;
+  font-size: 34px;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+}
+
+/* FILTER */
+.filter-buttons button {
+  padding: 10px 22px;
+  box-shadow: none;
+  margin: 5px;
+  border: none;
+  background: #aaa;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background: gold;
+  color: black;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 260px;
+  background-color: black
+  ;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  color: gold;
+}
+
+.overlay p {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* LINKS */
+.links a {
+  text-decoration: none;
+  margin: 6px;
+  padding: 6px 16px;
+  background: gold;
+  color: #000;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 80%;
+  text-align: center;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+}
+
+.details {
+  margin-top: 10px;
+}
+
+.details h3 {
+  color: gold;
+}
+
+/* CLOSE */
+.close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* ARROWS */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.arrow.prev { left: 30px; }
+.arrow.next { right: 30px; }
+
+/* HIDE */
+.hide {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="Images/Mathian Logo.png" alt="Mathian Logo" />
+        <span>Mathian</span>
+      </a>
+    </div>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a class="active" href="project.html">Projects</a></li>
+      <!--<li><a href="#">Blog</a></li>-->
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <i class="ri-menu-line menu-icon"></i>
+  </header>
+  
+  <section class="gallery-section">
+  <h2>Our Creative Works</h2>
+  <p class="subtitle">Web • Development • Design</p>
+
+  <div class="filter-buttons">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="web">Web</button>
+    <button data-filter="graphic">Graphic</button>
+  </div>
+
+  <div class="gallery">
+
+    <div class="gallery-item web" data-aos="fade-up"
+      data-title="Church Website"
+      data-desc="A fast and responsive church website."
+      <img src="">
+      <div class="overlay">
+        <h3>Church Website</h3>
+        <p>Responsive Web</p>
+        <div class="links">
+          <a href="https://cacchapelofglory.netlify.app">View</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item graphic" data-aos="zoom-in"
+      data-title="Birthday Flyer"
+      data-desc="Creative birthday flyer design."
+      <img src="">
+      <div class="overlay">
+        <h3>Birthday Flyer</h3>
+        <p>Creative Design</p>
+      </div>
+    </div>
+
+    <div class="gallery-item graphic" data-aos="fade-up"
+      data-title="Logo Design"
+      data-desc="A clean and versatile logo designed to represent a personal brand."
+      <img src="">
+      <div class="overlay">
+        <h3>Brand Identity</h3>
+        <p>Logo Design</p>
+      </div>
+    </div>
+
+    <div class="gallery-item graphic" data-aos="fade-up"
+      data-title="Wedding Invitation Flyer"
+      data-desc="A clean and elegant flyer designed for a wedding celebration."
+      <img src="">
+      <div class="overlay">
+        <h3>Event Design</h3>
+        <p>Wedding Invitation Flyer</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <span class="arrow prev">&#10094;</span>
+  <span class="arrow next">&#10095;</span>
+
+  <div class="lightbox-content">
+    <img id="lightbox-img">
+    <div class="details">
+      <h3 id="detail-title"></h3>
+      <p id="detail-desc"></p>
+    </div>
+  </div>
+</div>
+
+    <!-- FOOTER -->
+  <footer class="footer section">
+    <div class="footer_grid">
+      <div class="footer_col">
+        <div class="logo">
+          <a href="index.html"><img style="width: 80px;" src="Images/Mathian Logo.png" alt="Mathian Logo"></a>
+        </div>
+        <p>Graphic Design • Web Design • Web Development</p>
+        <h2>Contact</h2>
+        <h3><i class="ri-phone-fill"></i> +234 701 153 9552</h3>
+        <h3><i class="ri-mail-fill"></i> mathianofficial@gmail.com</h3>
+      </div>
+      <div class="footer_col">
+        <h2>Company</h2>
+        <a href="index.html"><i class="ri-arrow-right-s-line"></i> Home</a>
+        <a href="about.html"><i class="ri-arrow-right-s-line"></i> About</a>
+        <a href="service.html"><i class="ri-arrow-right-s-line"></i> Our Services</a><!--
+        <a href="#"><i class="ri-arrow-right-s-line"></i> Meet Our Team</a>
+        <a href="#"><i class="ri-arrow-right-s-line"></i> Latest Blog</a>-->
+      </div>
+      <div class="footer_col">
+        <h2>Quick Links</h2>
+        <a href="#testimonial"><i class="ri-arrow-right-s-line"></i> Testimonials</a>
+        <a href="contact.html"><i class="ri-arrow-right-s-line"></i> Contact Us</a>
+        <a href="faq.html"><i class="ri-arrow-right-s-line"></i> Faq's</a><!--
+        <a href="#"><i class="ri-arrow-right-s-line"></i> Careers</a>--
+      </div>
+      <div class="footer_col">
+        <h2>Newsletter</h2>
+        <p>Subscribe Our Newsletter</p>
+        <input type="email" placeholder="Enter E-mail">
+        <button>Subscribe <i class="ri-arrow-right-line"></i></button>-->
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      <p>&copy; 2025 Mathian - All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+<div class="wa-button" onclick="toggleChat()">
+  <img src="https://img.icons8.com/color/48/whatsapp.png"/>
+</div>
+
+<!-- Chat Popup -->
+<div class="wa-popup" id="waPopup">
+  <div class="wa-header">
+    <span>Chat with us</span>
+    <a onclick="toggleChat()">×</a>
+  </div>
+
+  <div class="wa-body">
+    <p>Hello 👋<br>How can we help you today?</p>
+  </div>
+
+  <div class="wa-footer">
+    <a href="https://wa.me/2347011539552?text=Hello%20I%20need%20your%20service"
+       target="_blank">
+      Start Chat
+    </a>
+  </div>
+</div>
+
+  <script src="main.js"></script>
+  
+  <!-- JS -->
+<script>
+  const buttons = document.querySelectorAll(".filter-buttons button");
+  const items = [...document.querySelectorAll(".gallery-item")];
+  
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+  const title = document.getElementById("detail-title");
+  const desc = document.getElementById("detail-desc");
+  
+  const closeBtn = document.querySelector(".close");
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
+  
+  let currentIndex = 0;
+  
+  function getVisibleItems() {
+    return items.filter(item => !item.classList.contains("hide"));
+  }
+  
+  function showItem(index) {
+    const visibleItems = getVisibleItems();
+    const item = visibleItems[index];
+    
+    img.src = item.querySelector("img").src;
+    title.textContent = item.dataset.title;
+    desc.textContent = item.dataset.desc;
+  }
+  
+  /* FILTER */
+  buttons.forEach(btn => {
+    btn.onclick = () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      
+      const filter = btn.dataset.filter;
+      items.forEach(item => {
+        item.classList.toggle(
+          "hide",
+          filter !== "all" && !item.classList.contains(filter)
+        );
+      });
+    };
+  });
+  
+  /* OPEN LIGHTBOX */
+  items.forEach(item => {
+    item.onclick = e => {
+      if (e.target.closest("a")) return;
+      
+      const visibleItems = getVisibleItems();
+      currentIndex = visibleItems.indexOf(item);
+      
+      showItem(currentIndex);
+      lightbox.style.display = "flex";
+    };
+  });
+  
+  /* CONTROLS */
+  closeBtn.onclick = () => lightbox.style.display = "none";
+  
+  nextBtn.onclick = () => {
+    const visibleItems = getVisibleItems();
+    currentIndex = (currentIndex + 1) % visibleItems.length;
+    showItem(currentIndex);
+  };
+  
+  prevBtn.onclick = () => {
+    const visibleItems = getVisibleItems();
+    currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+    showItem(currentIndex);
+  };
+  
+  document.addEventListener("keydown", e => {
+    if (lightbox.style.display !== "flex") return;
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "Escape") closeBtn.click();
+  });
+</script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true });
+</script>
+
+</body>
+</html>
