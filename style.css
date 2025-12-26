@@ -107,7 +107,7 @@
 
 /*Hero Section*/
 .hero{
-    background: url('Images/Background.png');
+    background: url('Background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -941,4 +941,5 @@ button{
   padding: 10px;
   text-decoration: none;
   border-radius: 5px;
+
 }
